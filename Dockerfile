@@ -15,6 +15,6 @@ RUN set -x \
 
 ADD app.py /falcon-app/
 
-EXPOSE 9090
+EXPOSE 8081
 
-CMD ["ls --la cd /falcon-app && uwsgi --http :9090 --wsgi-file app.py"]
+CMD ["ls --la cd /falcon-app && uwsgi --http :8081 --wsgi-file app.py"]
