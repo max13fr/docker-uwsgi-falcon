@@ -12,3 +12,9 @@ RUN set -x \
     && pip install --no-cache-dir --no-binary :all: falcon \
     && pip install --no-cache-dir uwsgi \
     && apk del .build-dep
+
+ADD app.py /falcon-app/
+
+EXPOSE 9090
+
+CMD ["ls --la cd /falcon-app && uwsgi --http :9090 --wsgi-file app.py"]
