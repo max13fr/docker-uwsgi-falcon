@@ -17,4 +17,4 @@ ADD app.py /falcon-app/
 
 EXPOSE 8081
 
-CMD ["ls --la cd /falcon-app && uwsgi --http :8081 --wsgi-file app.py"]
+CMD ["cd /falcon-app && uwsgi --http :8081 --wsgi-file app.py"]
